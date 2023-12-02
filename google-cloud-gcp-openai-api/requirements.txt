@@ -1,0 +1,12 @@
+fastapi==0.103.0
+uvicorn==0.23.2
+pydantic==1.10.12
+sse-starlette==1.6.5
+langchain==0.0.329
+transformers==4.32.1
+google-cloud-aiplatform==1.35.0    #Updated to accomodate https://github.com/langchain-ai/langchain/issues/11961
+
+tensorflow-text==2.14.0
+sentence-transformers==2.2.2
+deeplake==3.8.4
+unstructured==0.10.30

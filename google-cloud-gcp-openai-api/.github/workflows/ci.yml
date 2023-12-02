@@ -1,0 +1,34 @@
+name: "CI"
+
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+    branches:
+      - "master"
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: CI/CD Test
+    # https://github.com/actions/virtual-environments/
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies 🔧
+        run: sudo apt-get install flake8
+
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+
+      # Check Bash scripts
+      - name: Bash 🔎
+        run: shellcheck *.sh
+
+      # Check Python code
+      - name: Python 🔎
+        run: flake8 --ignore=W292 --max-line-length=127 --show-source --statistics *.py
