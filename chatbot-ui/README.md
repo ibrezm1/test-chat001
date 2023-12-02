@@ -79,6 +79,7 @@ OPENAI_API_KEY=YOUR_KEY
 **4. Run App**
 
 ```bash
+npm run build
 npm run dev
 ```
 
